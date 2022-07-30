@@ -19,28 +19,31 @@ const getTrips = async () => {
 const displayTrips = () => {
   $('#displayTrips').empty()
   $('#displayTrip').empty()
-  $('#displayDetails').empty()
   closeUpdate()
-  let allTrips = $('<div></div>').attr('class', 'allTrips')
+  let allTrips = $('<table></table>')
   for (const trip of tripsArray) {
     const { id, title, start_date } = trip
-    let singleTrip = $('<div></div>').attr('class', 'singleTrip')
+    let singleTrip = $('<tr></tr>').attr('class', 'singleTrip')
     const tripClass = id
-    let tripName = $('<span></span>')
+    let tripName = $('<td></td>')
       .attr('class', tripClass)
       .text(title + '  ')
-    let tripDate = $('<span></span>')
+    let tripDate = $('<td></td>')
       .attr('class', tripClass)
       .text(start_date + '  ')
+    let tdDisplayTrip = $('<td></td>')
     let displayTripBt = $('<button></button>').text("Display trip").attr('class', tripClass).attr('name', 'custom-btn').attr('id', 'btn-screen-down')
+    tdDisplayTrip.append(displayTripBt)
+    let tdTripBt = $('<td></td>')
     let editTripBt = $('<button></button>').text('Edit').attr('class', tripClass).attr('name', 'custom-btn').attr('id', 'btn-slide-right')
+    tdDisplayTrip.append(editTripBt)
     displayTripBt.click(displayTrip)
     editTripBt.click(editTrip)
 
     singleTrip.append(tripName)
     singleTrip.append(tripDate)
-    singleTrip.append(displayTripBt)
-    singleTrip.append(editTripBt)
+    singleTrip.append(tdDisplayTrip)
+    singleTrip.append(tdTripBt)
     allTrips.append(singleTrip)
   }
   $('#displayTrips').append(allTrips)
@@ -51,7 +54,6 @@ const displayTrip = (event) => {
   let hideDetails = $('<button></button>').text('Hide Details').attr('name', 'custom-btn').attr('id', 'btn-screen-down')
   hideDetails.click(hideTripDetails)
   $('#displayTrip').empty()
-  $('#displayDetails').empty()
   closeUpdate()
 
   let tripId = event.target.className
@@ -71,9 +73,6 @@ const displayTrip = (event) => {
   let siteName = $('<div></div>').text('Site name: ' + site_name)
   let siteCountry = $('<div></div>').text('Site country: ' + site_country)
 
-  displaySingleTrip.append($('<hr>'))
-  displaySingleTrip.append(br)
-  displaySingleTrip.append(hideDetails)
   displaySingleTrip.append(br)
   displaySingleTrip.append(tripName)
   displaySingleTrip.append(startDate)
@@ -86,6 +85,8 @@ const displayTrip = (event) => {
   displaySingleTrip.append(br)
   displaySingleTrip.append(siteName)
   displaySingleTrip.append(siteCountry)
+  displaySingleTrip.append(br)
+  displaySingleTrip.append(hideDetails)
 
   $('#displayTrip').append(displaySingleTrip)
 }
@@ -101,7 +102,6 @@ const editTrip = (event) => {
   const { id, title, start_date, duration, price, guide_name, guide_email, guide_phone, site_name, site_country } = trip
 
   $('#displayTrip').empty()
-  $('#displayDetails').empty()
   $('#displayDate').empty()
   $('#editTrip').show()
   $('#id_field').text(id)
@@ -143,7 +143,6 @@ const updateTripRequest = () => {
 //hide the trip details section
 const hideTripDetails = () => {
   $('#displayTrip').empty()
-  $('#displayDetails').empty()
 }
 
 // https://final-project.auth.eu-west-3.amazoncognito.com/login?client_id=25qrckh5ur16ob6uf2hh1c3hvg&response_type=code&scope=openid&redirect_uri=https://final-prject-shay-tavor.yisraelbar.xyz/
