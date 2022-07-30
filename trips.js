@@ -1,4 +1,4 @@
-// Yisrael Bar
+// Yisrael Bar, Lidor Eliyahu Shelef
 
 let tripsArray = []
 const br = $('<br>')
@@ -32,8 +32,8 @@ const displayTrips = () => {
     let tripDate = $('<span></span>')
       .attr('class', tripClass)
       .text(start_date + '  ')
-    let displayTripBt = $('<button></button>').text('Display trip').attr('class', tripClass)
-    let editTripBt = $('<button></button>').text('Edit').attr('class', tripClass)
+    let displayTripBt = $('<button></button>').text("Display trip").attr('class', tripClass).attr('name', 'custom-btn').attr('id', 'btn-screen-down')
+    let editTripBt = $('<button></button>').text('Edit').attr('class', tripClass).attr('name', 'custom-btn').attr('id', 'btn-slide-right')
     displayTripBt.click(displayTrip)
     editTripBt.click(editTrip)
 
@@ -48,7 +48,7 @@ const displayTrips = () => {
 
 //when clicking on a trip - display on screen the trip details
 const displayTrip = (event) => {
-  let hideDetails = $('<button></button>').text('Hide Details')
+  let hideDetails = $('<button></button>').text('Hide Details').attr('name', 'custom-btn').attr('id', 'btn-screen-down')
   hideDetails.click(hideTripDetails)
   $('#displayTrip').empty()
   $('#displayDetails').empty()
@@ -208,6 +208,7 @@ const createTripInServer = async (data) => {
         let res = JSON.parse(xhttp.responseText)
         alert(res.message)
         getTrips()
+        location.href = "/index.html";
         return resolve(res)
       }
     }

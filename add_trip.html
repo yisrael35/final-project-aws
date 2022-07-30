@@ -1,100 +1,95 @@
 <!-- index.html -->
 <!doctype html>
-<html>
-<head>
-    <title>ADD trip</title>
-    <link rel="icon" href="https://img.freepik.com/free-vector/detailed-travel-logo_23-2148627268.jpg?w=2000"/>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
-    <!-- load bootstrap via CDN -->
-     <!-- connect to jquery -->
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-     <!-- connect to ajax -->
-     <script src="https://ajax.microsoft.com/ajax/jQuery/jquery-1.4.4.js" 
-     type="text/javascript"></script>
-   
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
-    <script src="trips.js">
-    </script> <!-- load our javascript file -->
-    <link href="add_trip.css" rel="stylesheet" />
-</head>
-<body>
-    <div class="col-sm-6 col-sm-offset-3">
-
-        <h1>Add new trip</h1>
-        <!-- OUR FORM -->
-        <form id="trip_form" name="trip_form" method="POST">
-            <!-- title -->
-            <div id="title-group" class="form-group">
-                <label for="id">Trip title</label>
-                <input type="text" class="form-control" name="title" id="title" placeholder="write title here"
-                    required>
-                <!-- errors will go here -->
-            </div>
-            <!-- starting date -->
-            <div id="date-group" class="form-group">
-                <label for="date">start date</label>
-                <input type="date" class="form-control" name="date" id="start_date"
-                    required>
-                <!-- errors will go here -->
-            </div>
-            <!-- duration -->
-            <div id="duration-group" class="form-group">
-                <label for="duration">duration</label>
-                <input type="number" class="form-control" name="duration" id="duration"
-                    placeholder="write duration here" required min="1"> 
-                <!-- errors will go here -->
-            </div>
-            <!-- price of the trip -->
-            <div id="price-group" class="form-group">
-                <label for="price">price</label>
-                <input type="number" min="1" class="form-control" name="price" id="price" placeholder="0.0" required>
-                <!-- errors will go here -->
-            </div>  
+<html lang="en" dir="ltr">
+    <head>
+        <title>ADD trip</title>
+        <link rel="icon" href="https://img.freepik.com/free-vector/detailed-travel-logo_23-2148627268.jpg?w=2000"/>
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+        <link rel="stylesheet" href="trips.css"/>
+        <!-- load bootstrap via CDN -->
+        <!-- connect to jquery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <!-- connect to ajax -->
+        <script src="https://ajax.microsoft.com/ajax/jQuery/jquery-1.4.4.js" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+        <script src="trips.js">
+        </script> <!-- load our javascript file -->
+    </head>
+    <body>
+        <div class="col-sm-6 col-sm-offset-3">
+            <h1><u>Add new trip</u></h1>
+            <!-- OUR FORM -->
+            <form id="trip_form" name="trip_form" method="POST">
+                <!-- title -->
+                <div id="title-group" class="form-group">
+                    <label for="id">Trip title</label>
+                    <input type="text" class="form-control" name="title" id="title" placeholder="write title here" required>
+                    <!-- errors will go here -->
+                </div>
+                <!-- starting date -->
+                <div id="date-group" class="form-group">
+                    <label for="date">Start date</label>
+                    <input type="date" class="form-control" name="date" id="start_date"
+                        required>
+                    <!-- errors will go here -->
+                </div>
+                <!-- duration -->
+                <div id="duration-group" class="form-group">
+                    <label for="duration">Duration</label>
+                    <input type="number" class="form-control" name="duration" id="duration"
+                        placeholder="write duration here" required min="1"> 
+                    <!-- errors will go here -->
+                </div>
+                <!-- price of the trip -->
+                <div id="price-group" class="form-group">
+                    <label for="price">Price</label>
+                    <input type="number" min="1" class="form-control" name="price" id="price" placeholder="0.0" required>
+                    <!-- errors will go here -->
+                </div>  
+                <hr>
+                <!-- guide of the trip -->
+                <h3><u>Guide</u></h3>
+                <div id="guide-group" class="form-group">
+                    <label for="guide">Guide name</label>
+                    <input type="text" class="form-control" name="guide_name" id="guide_name" placeholder="jhon" required>
+                    <!-- errors will go here -->
+                </div>
+                <!-- guide email-->
+                <div id="guide-group" class="form-group">
+                    <label for="guide">Guide email</label>
+                    <input type="text" class="form-control" name="guide_email" id="guide_email" placeholder="jhon@gmail.com" required>
+                    <!-- errors will go here -->
+                </div>
+                <!-- guide phone -->
+                <div id="guide-group" class="form-group">
+                    <label for="guide">Guide phone</label>
+                    <input type="text" class="form-control" name="guide_phone" id="guide_phone" placeholder="0523332200" required>
+                    <!-- errors will go here -->
+                </div>
+                <hr>
+                <!-- site -->
+                <h3><u>Site</u></h3>
+                <!-- site name -->
+                <div id="site-group" class="form-group">
+                    <label for="site">Site name</label>
+                    <input type="text" class="form-control" name="site" id="site_name" placeholder="pizza">
+                    <!-- errors will go here -->
+                </div>
+                <!-- site country -->
+                <div id="country-group" class="form-group">
+                    <label for="country">Site country</label>
+                    <input type="text" class="form-control" name="country" id="site_country" placeholder="London">
+                    <!-- errors will go here -->
+                </div>
+                <br>
+                <button type="submit" class="btn-slide-up" name="custom-btn" onclick="createTripRequest()">Submit<span class="fa fa-arrow-right"></span></button>
+            </form>
             <br>
-            <!-- guide of the trip -->
-            <h3>guide</h3>
-            <div id="guide-group" class="form-group">
-                <label for="guide">guide name</label>
-                <input type="text" class="form-control" name="guide_name" id="guide_name" placeholder="jhon" required>
-                <!-- errors will go here -->
-            </div>
-            <!-- guide email-->
-            <div id="guide-group" class="form-group">
-                <label for="guide">guide email</label>
-                <input type="text" class="form-control" name="guide_email" id="guide_email" placeholder="jhon@gmail.com" required>
-                <!-- errors will go here -->
-            </div>
-            <!-- guide phone -->
-            <div id="guide-group" class="form-group">
-                <label for="guide">guide phone</label>
-                <input type="text" class="form-control" name="guide_phone" id="guide_phone" placeholder="0523332200" required>
-                <!-- errors will go here -->
-            </div>
-
+            <button name="custom-btn" id="btn-redirect"><span><a href="index.html">Go back to site</a></span></button>
+            <div>
             <br>
-            <!-- site -->
-            <h3>site</h3>
-            <!-- site name -->
-            <div id="site-group" class="form-group">
-                <label for="site">site name</label>
-                <input type="text" class="form-control" name="site" id="site_name" placeholder="pizza">
-                <!-- errors will go here -->
-            </div>
-            <!-- site country -->
-            <div id="country-group" class="form-group">
-                <label for="country">site country</label>
-                <input type="text" class="form-control" name="country" id="site_country" placeholder="London">
-                <!-- errors will go here -->
-            </div>
             <br>
-            <button type="submit" class="btn btn-success" onclick="createTripRequest()">Submit <span class="fa fa-arrow-right"></span></button>      
-        </form>
-        <br>
-        <button><a href="index.html">Go back to site list</a></button>
-        <div>
-        <br>
-        <br>
+            </div>
         </div>
-    </div>
-</body>
+    </body>
 </html>
