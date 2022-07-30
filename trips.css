@@ -1,0 +1,90 @@
+
+body {
+  /* background-color: rgb(88, 88, 158); */
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(11, 3, 63, 1) 0%,
+    rgba(77, 161, 179, 1) 0%,
+    rgba(9, 9, 121, 1) 0%,
+    rgba(32, 104, 130, 1) 25%,
+    rgba(3, 143, 210, 1) 53%,
+    rgba(3, 143, 210, 1) 72%,
+    rgba(3, 143, 210, 1) 90%
+  );
+  /* background-color: rgb(32, 32, 87); */
+  text-align: center;
+  color: azure;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+header {
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(11, 3, 63, 1) 0%,
+    rgba(77, 161, 179, 1) 0%,
+    rgba(9, 9, 121, 1) 0%,
+    rgba(32, 104, 130, 1) 25%,
+    rgba(3, 143, 210, 1) 53%,
+    rgba(3, 143, 210, 1) 72%,
+    rgba(3, 143, 210, 1) 90%
+  );
+    color: azure;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 4px;
+}
+
+footer {
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(11, 3, 63, 1) 0%,
+    rgba(77, 161, 179, 1) 0%,
+    rgba(9, 9, 121, 1) 0%,
+    rgba(32, 104, 130, 1) 25%,
+    rgba(3, 143, 210, 1) 53%,
+    rgba(3, 143, 210, 1) 72%,
+    rgba(3, 143, 210, 1) 90%
+  );  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 4px;
+}
+main {
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(11, 3, 63, 1) 0%,
+    rgba(77, 161, 179, 1) 0%,
+    rgba(9, 9, 121, 1) 0%,
+    rgba(32, 104, 130, 1) 25%,
+    rgba(3, 143, 210, 1) 53%,
+    rgba(3, 143, 210, 1) 72%,
+    rgba(3, 143, 210, 1) 90%
+  );  padding-bottom: 18px;
+}
+.displaySingleTrip {
+  text-align: center;
+}
+#editTrip {
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(11, 3, 63, 1) 0%,
+    rgba(77, 161, 179, 1) 0%,
+    rgba(9, 9, 121, 1) 0%,
+    rgba(32, 104, 130, 1) 25%,
+    rgba(3, 143, 210, 1) 53%,
+    rgba(3, 143, 210, 1) 72%,
+    rgba(3, 143, 210, 1) 90%
+  );
+  /* background-color: rgb(49, 51, 61); */
+  /* padding: 10px; */
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+button {
+  margin: 4px;
+}

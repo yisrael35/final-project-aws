@@ -1,0 +1,112 @@
+<!-- Yisrael Bar  07-30/07/2022 -->
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Trips</title>
+    <link rel="icon" href="https://img.freepik.com/free-vector/detailed-travel-logo_23-2148627268.jpg?w=2000"/>
+    <!-- connect to jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- connect to ajax -->
+    <script src="https://ajax.microsoft.com/ajax/jQuery/jquery-1.4.4.js" 
+    type="text/javascript"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+    <link href="trips.css" rel="stylesheet" />
+    <script src="trips.js" type="text/javascript"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+</head>
+<body>
+    <header><h1>Trips</h1></header>
+    <main>
+        <div>
+            <br>
+            <button><a href="add_trip.html">Add New trip</a></button>
+            <br>
+            <br>
+        </div>
+        <br>
+        <section >
+            <div id="displayTrips"></div>
+            <div id="displayTrip"></div>
+            <div id="displayDetails"></div>
+            <div id="editTrip">
+                <div class="col-sm-6 col-sm-offset-3">
+                    <h1>Update trip</h1>
+                    <hr>
+                    <!-- OUR FORM -->
+                    <form id="trip_form" name="trip_form" method="UPDATE">          
+                        <!-- ID -->
+                        <h4 >
+                            Trip id is: <span id="id_field"></span>
+                        </h4>
+                        <h4 >
+                            Trip title: &nbsp; <span id="title"></span>
+                        </h4>
+                        <!-- starting date -->
+                        <div id="date-group" class="form-group">
+                            <div id="displayDate"></div>
+                            <label for="date">start date:</label>
+                            <input type= "date" class="form-control" name="date" id="start_date"
+                                required>
+                            <!-- errors will go here -->
+                        </div>
+                        <!-- duration -->
+                        <div id="duration-group" class="form-group">
+                            <label for="duration">duration:</label>
+                            <input type="text" class="form-control" name="duration" id="duration"
+                                placeholder="write duration here">
+                            <!-- errors will go here -->
+                        </div>          
+                        <!-- price of the trip -->
+                        <div id="price-group" class="form-group">
+                            <label for="price">price:</label>
+                            <input type="number" class="form-control" name="price" id="price" placeholder="1.0">
+                            <!-- errors will go here -->
+                        </div>
+                        <!-- <br> -->
+                        <!-- guide of the trip -->
+                        <h3>guide</h3>
+                        <div id="guide-group" class="form-group">
+                                <label for="guide">guide name:</label>
+                                <input type="text" class="form-control" name="guide_name" id="guide_name" placeholder="jhon">
+                                <!-- errors will go here -->
+                             </div>
+                            <!-- guide email-->
+                            <div id="guide-group" class="form-group">
+                                <label for="guide">guide email:</label>
+                                <input type="text" class="form-control" name="guide_email" id="guide_email" placeholder="jhon">
+                                <!-- errors will go here -->
+                            </div>
+                            <!-- guide phone -->
+                            <div id="guide-group" class="form-group">
+                            <label for="guide">guide phone:</label>
+                            <input type="text" class="form-control" name="guide_phone" id="guide_phone" placeholder="jhon">
+                            <!-- errors will go here -->
+                            </div>
+                        <!-- site -->
+                        <div id ="site">                        
+                            <h3>site</h3>
+                            <div id="site-group" class="form-group">
+                                <label for="guide">site name:</label>
+                                <input type="text" class="form-control" name="site name" id="site_name" placeholder="area 51">
+                                <!-- errors will go here -->
+                            </div>
+                            <div id="site-group" class="form-group">
+                                <label for="guide">site country:</label>
+                                <input type="text" class="form-control" name="site country" id="site_country" placeholder="us">
+                                <!-- errors will go here -->
+                            </div>
+                        </div>
+                        <br>
+                        <button type="submit" class="btn btn-success" onclick="updateTripRequest()" >Submit <span class="fa fa-arrow-right"></span></button>
+                    </form>
+                    <button onclick="closeUpdate()">close update</button>
+                </div>
+            </div>
+        </section>
+        <br>
+    </main>
+</body>
+<footer>All Rights Reserved to Yisrael Bar and Lidor Shelef:)</footer>
+</html>
+
